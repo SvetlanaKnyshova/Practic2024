@@ -11,7 +11,7 @@ int main()
 
     std::ifstream file("Text.txt");
     if (!file.is_open()) {
-        std::cerr << "Íå óäàëîñü îòêðûòü ôàéë.";
+        std::cerr << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð».";
         return 1;
     }
     else {
@@ -21,9 +21,9 @@ int main()
                 max_line = line;
         }
      
-        std::cout << "Ñàìàÿ äëèííàÿ ñòðîêà:" << std::endl; 
+        std::cout << "Ð¡Ð°Ð¼Ð°Ñ Ð´Ð»Ð¸Ð½Ð½Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ°:" << std::endl; 
         std::cout << max_line << std::endl; 
-        std::cout << "Ìàêñèìàëüíàÿ äëèíà: " << max_line.size() << std::endl;
+        std::cout << "ÐœÐ°ÐºÑÐ¸Ð¼Ð°Ð»ÑŒÐ½Ð°Ñ Ð´Ð»Ð¸Ð½Ð°: " << max_line.size() << std::endl;
     }
  
     return 0;

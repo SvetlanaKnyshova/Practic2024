@@ -5,7 +5,7 @@
 
 using namespace std;
 
-// Функция вывода матрицы
+// Р¤СѓРЅРєС†РёСЏ РІС‹РІРѕРґР° РјР°С‚СЂРёС†С‹
 void printMatrix(const std::vector<std::vector<float>>& matrix) {
     for (const auto& row : matrix) {
         for (float value : row) {
@@ -15,7 +15,7 @@ void printMatrix(const std::vector<std::vector<float>>& matrix) {
     }
 }
  
-// Функция для определения ранга матрицы
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕРїСЂРµРґРµР»РµРЅРёСЏ СЂР°РЅРіР° РјР°С‚СЂРёС†С‹
 int findingRank(std::vector<std::vector<float>>& matrix, int rows, int cols) {
     int rank = 0;
     for (int col = 0; col < cols; col++) {
@@ -36,7 +36,7 @@ int findingRank(std::vector<std::vector<float>>& matrix, int rows, int cols) {
     return rank;
 }
 
-// Функция для транспонирования матрицы
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёСЏ РјР°С‚СЂРёС†С‹
 std::vector<std::vector<float>> transposeMatrix(const std::vector<std::vector<float>>& matrix) {
     int rows = static_cast<int>(matrix.size());
     int cols = static_cast<int>(matrix[0].size());
@@ -50,7 +50,7 @@ std::vector<std::vector<float>> transposeMatrix(const std::vector<std::vector<fl
     return transposed;
 }
 
-// Функция для проверки на равенство двух матриц
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РїСЂРѕРІРµСЂРєРё РЅР° СЂР°РІРµРЅСЃС‚РІРѕ РґРІСѓС… РјР°С‚СЂРёС†
 bool areMatricesEqual(const std::vector<std::vector<float>>& matrix1, const std::vector<std::vector<float>>& matrix2) {
     if (matrix1.size() != matrix2.size() || matrix1[0].size() != matrix2[0].size()) {
         return false;
@@ -66,7 +66,7 @@ bool areMatricesEqual(const std::vector<std::vector<float>>& matrix1, const std:
     return true;
 }
 
-// Функция сложения двух матриц
+// Р¤СѓРЅРєС†РёСЏ СЃР»РѕР¶РµРЅРёСЏ РґРІСѓС… РјР°С‚СЂРёС†
 std::vector<std::vector<float>> addMatrices(const std::vector<std::vector<float>>& matrix1, 
                                             const std::vector<std::vector<float>>& matrix2) {
     int rows = static_cast<int>(matrix1.size());
@@ -81,10 +81,10 @@ std::vector<std::vector<float>> addMatrices(const std::vector<std::vector<float>
     return result;
 }
 
-// Функция умножения двух матриц
+// Р¤СѓРЅРєС†РёСЏ СѓРјРЅРѕР¶РµРЅРёСЏ РґРІСѓС… РјР°С‚СЂРёС†
 std::vector<std::vector<float>> multiplyMatrices(const std::vector<std::vector<float>>& matrix1, 
                                                  const std::vector<std::vector<float>>& matrix2) {
-    // Получаем количество строк и столбцов в матрицах
+    // РџРѕР»СѓС‡Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє Рё СЃС‚РѕР»Р±С†РѕРІ РІ РјР°С‚СЂРёС†Р°С…
     int rows1 = static_cast<int>(matrix1.size());
     int cols1 = static_cast<int>(matrix1[0].size());
     int cols2 = static_cast<int>(matrix2[0].size());
@@ -100,7 +100,7 @@ std::vector<std::vector<float>> multiplyMatrices(const std::vector<std::vector<f
     return result;
 }
 
-// Функция для вычисления следа матрицы (суммы элементов на главной диагонали матрицы)
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ СЃР»РµРґР° РјР°С‚СЂРёС†С‹ (СЃСѓРјРјС‹ СЌР»РµРјРµРЅС‚РѕРІ РЅР° РіР»Р°РІРЅРѕР№ РґРёР°РіРѕРЅР°Р»Рё РјР°С‚СЂРёС†С‹)
 float trace(const std::vector<std::vector<float>>& matrix) {
     float sum = 0.0;
     for (size_t i = 0; i < matrix.size(); i++) {
@@ -109,7 +109,7 @@ float trace(const std::vector<std::vector<float>>& matrix) {
     return sum;
 }
 
-// Функция для нахождения определителя матрицы
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РЅР°С…РѕР¶РґРµРЅРёСЏ РѕРїСЂРµРґРµР»РёС‚РµР»СЏ РјР°С‚СЂРёС†С‹
 float determinant(const std::vector<std::vector<float>>& matrix) {
     int n = static_cast<int>(matrix.size());
 
@@ -138,15 +138,15 @@ float determinant(const std::vector<std::vector<float>>& matrix) {
     }
 }
 
-// Функция для вычисления обратной матрицы
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РІС‹С‡РёСЃР»РµРЅРёСЏ РѕР±СЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹
 std::vector<std::vector<float>> inverseMatrix(const std::vector<std::vector<float>>& matrix) {
     int n = static_cast<int>(matrix.size());
     std::vector<std::vector<float>> inverse(n, std::vector<float>(n));
     float det = determinant(matrix);
 
-    // Проверка на вырожденность матрицы
+    // РџСЂРѕРІРµСЂРєР° РЅР° РІС‹СЂРѕР¶РґРµРЅРЅРѕСЃС‚СЊ РјР°С‚СЂРёС†С‹
     if (det == 0) {
-        std::cout << "Матрица вырожденная, обратной матрицы не существует." << std::endl;
+        std::cout << "РњР°С‚СЂРёС†Р° РІС‹СЂРѕР¶РґРµРЅРЅР°СЏ, РѕР±СЂР°С‚РЅРѕР№ РјР°С‚СЂРёС†С‹ РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚." << std::endl;
         return inverse;
     }
 
@@ -171,7 +171,7 @@ std::vector<std::vector<float>> inverseMatrix(const std::vector<std::vector<floa
                     minorMatrix.push_back(row);
                 }
 
-                // Вычисление подматрицы и определения знака
+                // Р’С‹С‡РёСЃР»РµРЅРёРµ РїРѕРґРјР°С‚СЂРёС†С‹ Рё РѕРїСЂРµРґРµР»РµРЅРёСЏ Р·РЅР°РєР°
                 float minorDet = determinant(minorMatrix);
 
                 float sign = ((i + j) % 2 == 0) ? 1 : -1;
@@ -189,20 +189,20 @@ int main() {
 
     int N1, N2, M1, M2;
     
-    std::cout << "\nВведите количество строк 1 матрицы: "; 
+    std::cout << "\nР’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє 1 РјР°С‚СЂРёС†С‹: "; 
     std::cin >> M1;
-    std::cout << "Введите количество столбцов 1 матрицы: "; 
+    std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ 1 РјР°С‚СЂРёС†С‹: "; 
     std::cin >> N1;
     
     std::vector<std::vector<float>> matrix_1(M1, std::vector<float>(N1));
-    std::vector<std::vector<float>> matrix_1org(M1, std::vector<float>(N1)); // для транспонирования
+    std::vector<std::vector<float>> matrix_1org(M1, std::vector<float>(N1)); // РґР»СЏ С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёСЏ
     std::vector<std::vector<float>> matrix_1_task4(M1, std::vector<float>(N1));
     std::vector<std::vector<float>> matrix_1_task3(M1, std::vector<float>(N1));
 
-    std::cout << "\nВвод элементов Матрица_1 размерности " << M1 << " x " << N1 << std::endl;
+    std::cout << "\nР’РІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ РњР°С‚СЂРёС†Р°_1 СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё " << M1 << " x " << N1 << std::endl;
     for (int i = 0; i < M1; i++) {
         for (int j = 0; j < N1; j++) {
-            std::cout << "Матрица_1, ввод элемента[" << i << "][" << j << "]: ";
+            std::cout << "РњР°С‚СЂРёС†Р°_1, РІРІРѕРґ СЌР»РµРјРµРЅС‚Р°[" << i << "][" << j << "]: ";
             std::cin >> matrix_1[i][j];
             matrix_1org[i][j] = matrix_1[i][j];
             matrix_1_task4[i][j] = matrix_1[i][j];
@@ -210,20 +210,20 @@ int main() {
         }
     }
 
-    std::cout << "\nВведите количество строк 2 матрицы: "; 
+    std::cout << "\nР’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє 2 РјР°С‚СЂРёС†С‹: "; 
     std::cin >> M2;
-    std::cout << "Введите количество столбцов 2 матрицы: "; 
+    std::cout << "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ 2 РјР°С‚СЂРёС†С‹: "; 
     std::cin >> N2;
 
     std::vector<std::vector<float>> matrix_2(M2, std::vector<float>(N2));
-    std::vector<std::vector<float>> matrix_2org(M2, std::vector<float>(N2)); // для транспонирования
+    std::vector<std::vector<float>> matrix_2org(M2, std::vector<float>(N2)); // РґР»СЏ С‚СЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРёСЏ
     std::vector<std::vector<float>> matrix_2_task4(M2, std::vector<float>(N2));
     std::vector<std::vector<float>> matrix_2_task3(M2, std::vector<float>(N2));
 
-    std::cout << "\nВвод элементов Матрица_2 размерности " << M2 << " x " << N2 << std::endl;
+    std::cout << "\nР’РІРѕРґ СЌР»РµРјРµРЅС‚РѕРІ РњР°С‚СЂРёС†Р°_2 СЂР°Р·РјРµСЂРЅРѕСЃС‚Рё " << M2 << " x " << N2 << std::endl;
     for (int i = 0; i < M2; i++) {
         for (int j = 0; j < N2; j++) {
-            std::cout << "Матрица_1, ввод элемента[" << i << "][" << j << "]: ";
+            std::cout << "РњР°С‚СЂРёС†Р°_1, РІРІРѕРґ СЌР»РµРјРµРЅС‚Р°[" << i << "][" << j << "]: ";
             std::cin >> matrix_2[i][j];
             matrix_2org[i][j] = matrix_2[i][j];
             matrix_2_task4[i][j] = matrix_2[i][j];
@@ -231,7 +231,7 @@ int main() {
         }
     }
 
-    std::cout << "\nВывод Матрица_1:" << std::endl;
+    std::cout << "\nР’С‹РІРѕРґ РњР°С‚СЂРёС†Р°_1:" << std::endl;
     printMatrix(matrix_1);
     // for (int i = 0; i < M1; i++) {
     //     for (int j = 0; j < N1; j++) {
@@ -240,88 +240,88 @@ int main() {
     //     std::cout << std::endl;
     // }
 
-    std::cout << "\nВывод Матрица_2:" << std::endl;
+    std::cout << "\nР’С‹РІРѕРґ РњР°С‚СЂРёС†Р°_2:" << std::endl;
     printMatrix(matrix_2);
     
-    // Ранг матриц
+    // Р Р°РЅРі РјР°С‚СЂРёС†
     int rank1 = findingRank(matrix_1, M1, N1);
     int rank2 = findingRank(matrix_2, M2, N2);
 
-    std::cout << "\nРанг первой матрицы: " << rank1 << std::endl;
-    std::cout << "Ранг второй матрицы: " << rank2 << std::endl;
+    std::cout << "\nР Р°РЅРі РїРµСЂРІРѕР№ РјР°С‚СЂРёС†С‹: " << rank1 << std::endl;
+    std::cout << "Р Р°РЅРі РІС‚РѕСЂРѕР№ РјР°С‚СЂРёС†С‹: " << rank2 << std::endl;
 
-    // Транспонтирование матриц
+    // РўСЂР°РЅСЃРїРѕРЅС‚РёСЂРѕРІР°РЅРёРµ РјР°С‚СЂРёС†
     std::vector<std::vector<float>> transposedMatrix1 = transposeMatrix(matrix_1org);
     std::vector<std::vector<float>> transposedMatrix2 = transposeMatrix(matrix_2org);
     
-    std::cout << "\nТранспонированная первая матрица:" << std::endl;
+    std::cout << "\nРўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РїРµСЂРІР°СЏ РјР°С‚СЂРёС†Р°:" << std::endl;
     printMatrix(transposedMatrix1);
-    std::cout << "\nТранспонированная вторая матрица:" << std::endl;
+    std::cout << "\nРўСЂР°РЅСЃРїРѕРЅРёСЂРѕРІР°РЅРЅР°СЏ РІС‚РѕСЂР°СЏ РјР°С‚СЂРёС†Р°:" << std::endl;
     printMatrix(transposedMatrix2);
 
-    // Вызов функции нахождения равенства матриц
+    // Р’С‹Р·РѕРІ С„СѓРЅРєС†РёРё РЅР°С…РѕР¶РґРµРЅРёСЏ СЂР°РІРµРЅСЃС‚РІР° РјР°С‚СЂРёС†
     bool resultAreMatricesEqual = areMatricesEqual(matrix_1_task4, matrix_2_task4);
     if (resultAreMatricesEqual) {
-        std::cout << "\nМатрицы равны." << std::endl;
+        std::cout << "\nРњР°С‚СЂРёС†С‹ СЂР°РІРЅС‹." << std::endl;
     }
     else {
-        std::cout << "\nМатрицы не равны." << std::endl;
+        std::cout << "\nРњР°С‚СЂРёС†С‹ РЅРµ СЂР°РІРЅС‹." << std::endl;
     }
 
     if (M1 == M2 && N1 == N2) {
         std::vector<std::vector<float>> result = addMatrices(matrix_1_task4, matrix_2_task4);
-        std::cout << "\nРезультат сложения матриц:" << std::endl;
+        std::cout << "\nР РµР·СѓР»СЊС‚Р°С‚ СЃР»РѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†:" << std::endl;
         printMatrix(result);
     }
     else {
-        std::cout << "\nСложение не произведено: матрицы должны иметь одинаковый размер." << std::endl;
+        std::cout << "\nРЎР»РѕР¶РµРЅРёРµ РЅРµ РїСЂРѕРёР·РІРµРґРµРЅРѕ: РјР°С‚СЂРёС†С‹ РґРѕР»Р¶РЅС‹ РёРјРµС‚СЊ РѕРґРёРЅР°РєРѕРІС‹Р№ СЂР°Р·РјРµСЂ." << std::endl;
     }
 
     if (N1 == M2) {
         std::vector<std::vector<float>> result = multiplyMatrices(matrix_1_task4, matrix_2_task4);
-        std::cout << "\nРезультат перемножения матриц:" << std::endl;
+        std::cout << "\nР РµР·СѓР»СЊС‚Р°С‚ РїРµСЂРµРјРЅРѕР¶РµРЅРёСЏ РјР°С‚СЂРёС†:" << std::endl;
         printMatrix(result);
     }
     else {
-        std::cout << "\nПеремножение невозможно: количество столбцов в первой матрице должно совпадать с количеством строк во второй." << std::endl;
+        std::cout << "\nРџРµСЂРµРјРЅРѕР¶РµРЅРёРµ РЅРµРІРѕР·РјРѕР¶РЅРѕ: РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РІ РїРµСЂРІРѕР№ РјР°С‚СЂРёС†Рµ РґРѕР»Р¶РЅРѕ СЃРѕРІРїР°РґР°С‚СЊ СЃ РєРѕР»РёС‡РµСЃС‚РІРѕРј СЃС‚СЂРѕРє РІРѕ РІС‚РѕСЂРѕР№." << std::endl;
     }
 
-    // Блок на квадратные матрицы
-    std::cout << "\nДанные по 1 матрице: " << std::endl;
+    // Р‘Р»РѕРє РЅР° РєРІР°РґСЂР°С‚РЅС‹Рµ РјР°С‚СЂРёС†С‹
+    std::cout << "\nР”Р°РЅРЅС‹Рµ РїРѕ 1 РјР°С‚СЂРёС†Рµ: " << std::endl;
     if (M1 == N1) {
         float det = determinant(matrix_1_task3);
         float tr = trace(matrix_1_task3);
         std::vector<std::vector<float>> invMatrix = inverseMatrix(matrix_1_task3);
 
-        std::cout << "Матрица квадратная" << std::endl;
-        std::cout << "Определитель матрицы: " << det << std::endl;
-        std::cout << "Следы матрицы: " << tr << std::endl;
+        std::cout << "РњР°С‚СЂРёС†Р° РєРІР°РґСЂР°С‚РЅР°СЏ" << std::endl;
+        std::cout << "РћРїСЂРµРґРµР»РёС‚РµР»СЊ РјР°С‚СЂРёС†С‹: " << det << std::endl;
+        std::cout << "РЎР»РµРґС‹ РјР°С‚СЂРёС†С‹: " << tr << std::endl;
 
         if (det != 0) {
-            std::cout << "Обратная матрица:\n";
+            std::cout << "РћР±СЂР°С‚РЅР°СЏ РјР°С‚СЂРёС†Р°:\n";
             printMatrix(invMatrix);
         }
     }
     else {
-        std::cout << "Матрица не квадратная. Невозможно найти определитель, следы и обратную матрицу." << std::endl;
+        std::cout << "РњР°С‚СЂРёС†Р° РЅРµ РєРІР°РґСЂР°С‚РЅР°СЏ. РќРµРІРѕР·РјРѕР¶РЅРѕ РЅР°Р№С‚Рё РѕРїСЂРµРґРµР»РёС‚РµР»СЊ, СЃР»РµРґС‹ Рё РѕР±СЂР°С‚РЅСѓСЋ РјР°С‚СЂРёС†Сѓ." << std::endl;
     }
-    std::cout << "\nДанные по 2 матрице: " << std::endl;
+    std::cout << "\nР”Р°РЅРЅС‹Рµ РїРѕ 2 РјР°С‚СЂРёС†Рµ: " << std::endl;
     if (M2 == N2) {
         float det = determinant(matrix_2_task3);
         float tr = trace(matrix_2_task3);
         std::vector<std::vector<float>> invMatrix = inverseMatrix(matrix_2_task3);
 
-        std::cout << "Матрица квадратная" << std::endl;
-        std::cout << "Определитель матрицы: " << det << std::endl;
-        std::cout << "Следы матрицы: " << tr << std::endl;
+        std::cout << "РњР°С‚СЂРёС†Р° РєРІР°РґСЂР°С‚РЅР°СЏ" << std::endl;
+        std::cout << "РћРїСЂРµРґРµР»РёС‚РµР»СЊ РјР°С‚СЂРёС†С‹: " << det << std::endl;
+        std::cout << "РЎР»РµРґС‹ РјР°С‚СЂРёС†С‹: " << tr << std::endl;
 
         if (det != 0) {
-            std::cout << "Обратная матрица:\n";
+            std::cout << "РћР±СЂР°С‚РЅР°СЏ РјР°С‚СЂРёС†Р°:\n";
             printMatrix(invMatrix);
         }
     }
     else {
-        std::cout << "Матрица не квадратная. Невозможно найти определитель, следы и обратную матрицу." << std::endl;
+        std::cout << "РњР°С‚СЂРёС†Р° РЅРµ РєРІР°РґСЂР°С‚РЅР°СЏ. РќРµРІРѕР·РјРѕР¶РЅРѕ РЅР°Р№С‚Рё РѕРїСЂРµРґРµР»РёС‚РµР»СЊ, СЃР»РµРґС‹ Рё РѕР±СЂР°С‚РЅСѓСЋ РјР°С‚СЂРёС†Сѓ." << std::endl;
     }
 
     return 0;

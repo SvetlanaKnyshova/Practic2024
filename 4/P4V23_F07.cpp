@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
 	SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-	// Проверка количества переданных аргументов командной строки
+	// РџСЂРѕРІРµСЂРєР° РєРѕР»РёС‡РµСЃС‚РІР° РїРµСЂРµРґР°РЅРЅС‹С… Р°СЂРіСѓРјРµРЅС‚РѕРІ РєРѕРјР°РЅРґРЅРѕР№ СЃС‚СЂРѕРєРё
     if (argc != 4) {
         std::cerr << "Usage: " << argv[0] << " a b N" << std::endl;
         return 1;
@@ -30,17 +30,17 @@ int main(int argc, char *argv[]) {
 	int n = std::stoi(argv[3]);
 	float h = (b - a) / pow(10, 3);
 
-	// Поиск минимального и максимального значений y в процессе вычислений
+	// РџРѕРёСЃРє РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёР№ y РІ РїСЂРѕС†РµСЃСЃРµ РІС‹С‡РёСЃР»РµРЅРёР№
     float min_y = (std::numeric_limits<float>::max)();
     float max_y = std::numeric_limits<float>::lowest();
 
 	for (int i = 0; i < n; i++){
-		std::cout <<"\nВвод " << i + 1 << " набора параметров для z:";
-		std::cout << "\nВведите параметр А: ";
+		std::cout <<"\nР’РІРѕРґ " << i + 1 << " РЅР°Р±РѕСЂР° РїР°СЂР°РјРµС‚СЂРѕРІ РґР»СЏ z:";
+		std::cout << "\nР’РІРµРґРёС‚Рµ РїР°СЂР°РјРµС‚СЂ Рђ: ";
 		std::cin >> A;
-		std::cout << "Введите параметр B: ";
+		std::cout << "Р’РІРµРґРёС‚Рµ РїР°СЂР°РјРµС‚СЂ B: ";
 		std::cin >> B;
-		std::cout << "Введите параметр C: ";
+		std::cout << "Р’РІРµРґРёС‚Рµ РїР°СЂР°РјРµС‚СЂ C: ";
 		std::cin >> C;
 		
 		std::vector<float> y_values;
@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 			// std::cout << i << " " << "y(" << i << ";" << potentialEnergy << ")" << std::endl;
 		}
 
-		// Поиск локальных минимального и максимального значений y
+		// РџРѕРёСЃРє Р»РѕРєР°Р»СЊРЅС‹С… РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёР№ y
         float local_min_y = *std::min_element(y_values.begin(), y_values.end());
         float local_max_y = *std::max_element(y_values.begin(), y_values.end());
 
@@ -63,20 +63,20 @@ int main(int argc, char *argv[]) {
 		std::cout << "\nmin y: " << std::fixed << std::setprecision(3) << local_min_y << std::endl;
     	std::cout << "max y: " << std::fixed << std::setprecision(3) << local_max_y << std::endl;
 
-		// Запись результатов вычислений в файл
+		// Р—Р°РїРёСЃСЊ СЂРµР·СѓР»СЊС‚Р°С‚РѕРІ РІС‹С‡РёСЃР»РµРЅРёР№ РІ С„Р°Р№Р»
         std::string filename = std::to_string(i + 1) + ".txt";
         std::ofstream file(filename);
 
-        file << "#z = " << "А=" << A << "; B=" << B << "; C=" << C <<"\n";
+        file << "#z = " << "Рђ=" << A << "; B=" << B << "; C=" << C <<"\n";
         for (size_t j = 0; j < x_values.size(); ++j) {
             file << std::fixed << std::setprecision(3) << x_values[j] << " " << y_values[j] << "\n";
         }
 
 	}
 
-	// Вывод общих минимального и максимального значений y
-    std::cout << "\nМинимальное значение y по всем наборам: " << std::fixed << std::setprecision(3) << min_y << std::endl;
-    std::cout << "Максимальное значение y по всем наборам: " << std::fixed << std::setprecision(3) << max_y << std::endl;
+	// Р’С‹РІРѕРґ РѕР±С‰РёС… РјРёРЅРёРјР°Р»СЊРЅРѕРіРѕ Рё РјР°РєСЃРёРјР°Р»СЊРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёР№ y
+    std::cout << "\nРњРёРЅРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ y РїРѕ РІСЃРµРј РЅР°Р±РѕСЂР°Рј: " << std::fixed << std::setprecision(3) << min_y << std::endl;
+    std::cout << "РњР°РєСЃРёРјР°Р»СЊРЅРѕРµ Р·РЅР°С‡РµРЅРёРµ y РїРѕ РІСЃРµРј РЅР°Р±РѕСЂР°Рј: " << std::fixed << std::setprecision(3) << max_y << std::endl;
 
 	return 0;
 }

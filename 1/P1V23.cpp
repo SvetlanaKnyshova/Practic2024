@@ -23,15 +23,15 @@ void countingSortAlgo(int arr[], int size, int position) {
 	const int limit = 10;
 	int result[size];
 	int count[limit] = {0};
-	// Вычисление количества каждого целого числа
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІР° РєР°Р¶РґРѕРіРѕ С†РµР»РѕРіРѕ С‡РёСЃР»Р°
 	for (int j = 0; j < size; j++) {
 		count[(arr[j] / position) % 10]++;
 	}
-	// Расчет совокупного количества
+	// Р Р°СЃС‡РµС‚ СЃРѕРІРѕРєСѓРїРЅРѕРіРѕ РєРѕР»РёС‡РµСЃС‚РІР°
 	for (int j = 1; j < limit; j++) {
 		count[j] += count[j - 1];
 	}
-	// Сортировка
+	// РЎРѕСЂС‚РёСЂРѕРІРєР°
 	for (int j = size - 1; j >= 0; j--) {
 		result[count[(arr[j] / position) % 10] - 1] = arr[j];
 		count[(arr[j] / position) % 10]--;
@@ -49,8 +49,8 @@ void radixSortAlgo(int arr[], int size, int value_max) {
 
 int main(int argc, char *argv[])
 {
-	SetConsoleCP(1251); // Установка кодовой страницы win-cp 1251 в поток ввода
-    SetConsoleOutputCP(1251); // Установка кодовой страницы win-cp 1251 в поток вывода
+	SetConsoleCP(1251); // РЈСЃС‚Р°РЅРѕРІРєР° РєРѕРґРѕРІРѕР№ СЃС‚СЂР°РЅРёС†С‹ win-cp 1251 РІ РїРѕС‚РѕРє РІРІРѕРґР°
+    SetConsoleOutputCP(1251); // РЈСЃС‚Р°РЅРѕРІРєР° РєРѕРґРѕРІРѕР№ СЃС‚СЂР°РЅРёС†С‹ win-cp 1251 РІ РїРѕС‚РѕРє РІС‹РІРѕРґР°
 
 	int arraySize = argc - 1;
 	float sum = 0;
@@ -62,10 +62,10 @@ int main(int argc, char *argv[])
 	int count = 0;
 	int maxSize = 0;
 
-	float *arrayMain = new float[arraySize]; // Создаем массив указателей
+	float *arrayMain = new float[arraySize]; // РЎРѕР·РґР°РµРј РјР°СЃСЃРёРІ СѓРєР°Р·Р°С‚РµР»РµР№
 	for(int i = 1; i < argc; i++) {
 		if (check_is_numeric(argv[i]) == false) {
-			std::cout << "Error: некоректно задан аргумент <"<< argv[i] << ">: допустимы только числа (более 0)" << endl;
+			std::cout << "Error: РЅРµРєРѕСЂРµРєС‚РЅРѕ Р·Р°РґР°РЅ Р°СЂРіСѓРјРµРЅС‚ <"<< argv[i] << ">: РґРѕРїСѓСЃС‚РёРјС‹ С‚РѕР»СЊРєРѕ С‡РёСЃР»Р° (Р±РѕР»РµРµ 0)" << endl;
 			return 0;
 		} 
 		else {
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 		}
 	}
 
-	std::cout << "Введите искомый элемент массива: ";
+	std::cout << "Р’РІРµРґРёС‚Рµ РёСЃРєРѕРјС‹Р№ СЌР»РµРјРµРЅС‚ РјР°СЃСЃРёРІР°: ";
 	std::cin >> Searh;
 
 	float min = arrayMain[0];
@@ -119,17 +119,17 @@ int main(int argc, char *argv[])
 	float averageArith = sum / arraySize;
 	float averageGeo = pow(op, 1.0 / arraySize);
 
-	// Вывод информации о результате поиска
+	// Р’С‹РІРѕРґ РёРЅС„РѕСЂРјР°С†РёРё Рѕ СЂРµР·СѓР»СЊС‚Р°С‚Рµ РїРѕРёСЃРєР°
 	if (found) {
-		std::cout << "Значение найдено в массиве " << count << " раз(а)." << endl;
-		std::cout << "Индексы найденного значения: ";
+		std::cout << "Р—РЅР°С‡РµРЅРёРµ РЅР°Р№РґРµРЅРѕ РІ РјР°СЃСЃРёРІРµ " << count << " СЂР°Р·(Р°)." << endl;
+		std::cout << "РРЅРґРµРєСЃС‹ РЅР°Р№РґРµРЅРЅРѕРіРѕ Р·РЅР°С‡РµРЅРёСЏ: ";
 		for (int index : searhIndex) { 
             std::cout << index << " "; 
         }
 		std::cout << endl;
 	}
 	else {
-		std::cout << "Значение не найдено в массиве." << endl;
+		std::cout << "Р—РЅР°С‡РµРЅРёРµ РЅРµ РЅР°Р№РґРµРЅРѕ РІ РјР°СЃСЃРёРІРµ." << endl;
 	}
 	
 	int *arrSord = new int[arraySize];
@@ -140,32 +140,32 @@ int main(int argc, char *argv[])
 	}
     radixSortAlgo(arrSord, arraySize, ValueMax);
 
-	// Вывод сортировки
-	std::cout <<"\nСортировка по возрастанию: ";
+	// Р’С‹РІРѕРґ СЃРѕСЂС‚РёСЂРѕРІРєРё
+	std::cout <<"\nРЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ РІРѕР·СЂР°СЃС‚Р°РЅРёСЋ: ";
 	for (int i = 0; i < arraySize; i++) {
 		std::cout << static_cast<float>((arrSord[i]) / pow(10, maxSize)) << " ";
 	}
-	std::cout <<"\nСортировка по убыванию: ";
+	std::cout <<"\nРЎРѕСЂС‚РёСЂРѕРІРєР° РїРѕ СѓР±С‹РІР°РЅРёСЋ: ";
 	for (int i = arraySize - 1; i >= 0; i--) {
 		std::cout << static_cast<float>((arrSord[i]) / pow(10, maxSize)) << " ";
 	}
-	// Вывод остальной информации по заданию
-	std::cout << endl << "\nДанные по массиву: " << endl;
-	std::cout << "min = " << min << ", Индексы: "; 
+	// Р’С‹РІРѕРґ РѕСЃС‚Р°Р»СЊРЅРѕР№ РёРЅС„РѕСЂРјР°С†РёРё РїРѕ Р·Р°РґР°РЅРёСЋ
+	std::cout << endl << "\nР”Р°РЅРЅС‹Рµ РїРѕ РјР°СЃСЃРёРІСѓ: " << endl;
+	std::cout << "min = " << min << ", РРЅРґРµРєСЃС‹: "; 
         for (int index : minIndex) { 
             std::cout << index << " "; 
         }  
-    std::cout << "\nmax = " << max << ", Индексы: "; 
+    std::cout << "\nmax = " << max << ", РРЅРґРµРєСЃС‹: "; 
         for (int index : maxIndex) { 
             std::cout << index << " "; 
         }
     std::cout << endl;
-	std::cout << "Сумма элементов массива: " << sum << endl;
-	std::cout << "Произведение элементов массива: " << op << endl;
-	std::cout << "Среднее арифметическое: " << averageArith << endl;
-	std::cout << "Среднее геометрическое: " << averageGeo << endl;
-	std::cout << "Количество четных элементов: " << evenNumberCount << endl;
-	std::cout << "Количество нечетных элементов: " << oddNumberCount << endl;
+	std::cout << "РЎСѓРјРјР° СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << sum << endl;
+	std::cout << "РџСЂРѕРёР·РІРµРґРµРЅРёРµ СЌР»РµРјРµРЅС‚РѕРІ РјР°СЃСЃРёРІР°: " << op << endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ: " << averageArith << endl;
+	std::cout << "РЎСЂРµРґРЅРµРµ РіРµРѕРјРµС‚СЂРёС‡РµСЃРєРѕРµ: " << averageGeo << endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ С‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << evenNumberCount << endl;
+	std::cout << "РљРѕР»РёС‡РµСЃС‚РІРѕ РЅРµС‡РµС‚РЅС‹С… СЌР»РµРјРµРЅС‚РѕРІ: " << oddNumberCount << endl;
 
 	delete arrayMain;
 	return 0;
