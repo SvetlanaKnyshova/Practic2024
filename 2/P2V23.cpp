@@ -2,14 +2,30 @@
 #include <vector>
 #include <algorithm>
 #include <windows.h>
+#include <iomanip>
+#include <cctype>   // для функции isdigit
+#include <cstdlib>  // для функции atoi
+#include <stdlib.h>
+
 
 using namespace std;
+
+bool check_is_numeric(char value[])
+{
+	for (int i = 0; i < strlen(value); i++) {
+		if (isdigit(value[i])) {
+			continue;
+		}
+		return false;
+	}
+	return true;
+}
 
 // Функция вывода матрицы
 void printMatrix(const std::vector<std::vector<float>>& matrix) {
     for (const auto& row : matrix) {
         for (float value : row) {
-            std::cout << value << " ";
+            std::cout << std::setprecision(2) << value << " ";
         }
         std::cout << std::endl;
     }
@@ -187,7 +203,7 @@ int main() {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    int N1, N2, M1, M2;
+    int N1, N2, M1, M2, num;
     
     std::cout << "\nВведите количество строк 1 матрицы: "; 
     std::cin >> M1;
@@ -198,18 +214,25 @@ int main() {
     std::vector<std::vector<float>> matrix_1org(M1, std::vector<float>(N1)); // для транспонирования
     std::vector<std::vector<float>> matrix_1_task4(M1, std::vector<float>(N1));
     std::vector<std::vector<float>> matrix_1_task3(M1, std::vector<float>(N1));
+    char *line;
 
     std::cout << "\nВвод элементов Матрица_1 размерности " << M1 << " x " << N1 << std::endl;
     for (int i = 0; i < M1; i++) {
         for (int j = 0; j < N1; j++) {
             std::cout << "Матрица_1, ввод элемента[" << i << "][" << j << "]: ";
-            std::cin >> matrix_1[i][j];
-            matrix_1org[i][j] = matrix_1[i][j];
-            matrix_1_task4[i][j] = matrix_1[i][j];
-            matrix_1_task3[i][j] = matrix_1[i][j];
+            std::cin >> line;
+            while (check_is_numeric(line) == false or atoi(line) == 0) {
+                std::cout << "Error: введенный элемент [" << i << "][" << j << "] - не является целочисленным, либо не больше нуля!" << std::endl;
+                std::cout << "Матрица_1, ввод элемента[" << i << "][" << j << "]: ";
+                std::cin >> line;
+		    }
+                matrix_1[i][j] = stof(line);
+                matrix_1org[i][j] = matrix_1[i][j];
+                matrix_1_task4[i][j] = matrix_1[i][j];
+                matrix_1_task3[i][j] = matrix_1[i][j];
         }
     }
-
+    
     std::cout << "\nВведите количество строк 2 матрицы: "; 
     std::cin >> M2;
     std::cout << "Введите количество столбцов 2 матрицы: "; 
@@ -220,11 +243,18 @@ int main() {
     std::vector<std::vector<float>> matrix_2_task4(M2, std::vector<float>(N2));
     std::vector<std::vector<float>> matrix_2_task3(M2, std::vector<float>(N2));
 
+
     std::cout << "\nВвод элементов Матрица_2 размерности " << M2 << " x " << N2 << std::endl;
     for (int i = 0; i < M2; i++) {
         for (int j = 0; j < N2; j++) {
-            std::cout << "Матрица_1, ввод элемента[" << i << "][" << j << "]: ";
-            std::cin >> matrix_2[i][j];
+            std::cout << "Матрица_2, ввод элемента[" << i << "][" << j << "]: ";
+            std::cin >> line;
+            while (check_is_numeric(line) == false or atoi(line) == 0) {
+                std::cout << "Error: введенный элемент [" << i << "][" << j << "] - не является целочисленным, либо не больше нуля!" << std::endl;
+                std::cout << "Матрица_2, ввод элемента[" << i << "][" << j << "]: ";
+                std::cin >> line;
+		    }
+            matrix_2[i][j] = stof(line);
             matrix_2org[i][j] = matrix_2[i][j];
             matrix_2_task4[i][j] = matrix_2[i][j];
             matrix_2_task3[i][j] = matrix_2[i][j];
